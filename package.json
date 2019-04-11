@@ -1,0 +1,35 @@
+{
+    "name": "solves-registry",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@types/react": "^16.8.13",
+        "@types/react-dom": "^16.8.3",
+        "bootstrap": "^4.3.1",
+        "react": "^16.8.6",
+        "react-bootstrap": "^1.0.0-beta.6",
+        "react-dom": "^16.8.6",
+        "react-scripts": "1.1.5"
+    },
+    "scripts": {
+        "start": "webpack-dev-server --mode development --open --hot",
+        "build": "webpack --mode production",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "@babel/preset-react": "^7.0.0",
+        "awesome-typescript-loader": "^5.2.1",
+        "babel-loader": "^8.0.5",
+        "css-loader": "^2.1.1",
+        "html-webpack-plugin": "^3.2.0",
+        "source-map-loader": "^0.2.4",
+        "style-loader": "^0.23.1",
+        "typescript": "^3.4.3",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0",
+        "webpack-dev-server": "^3.3.1"
+    }
+}
