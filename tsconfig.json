@@ -5,7 +5,7 @@
         "target": "esnext",
         "module": "esnext",
         "sourceMap": true,
-        "removeComments": false,
+        "removeComments": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,

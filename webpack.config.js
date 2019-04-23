@@ -2,11 +2,13 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: './index.js',
+    context: path.join(__dirname, 'src'),
     devServer: {
         host: 'localhost',
         publicPath: "/",
-        contentBase: './build',
+        contentBase: "./build",
+        watchContentBase: true,
         noInfo: false,
         hot: true,
         inline: true,
@@ -22,7 +24,7 @@ module.exports = {
     },
     resolve: {
         modules: [
-            path.resolve('./src'),
+            path.resolve('./src/*'),
             path.resolve('./node_modules'),
         ],
         alias: {
@@ -47,12 +49,17 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"]
-            }
+            },
+            {
+                test: /\.(png|jpg)$/,
+                use: 'file-loader?name=[name].[ext]',
+            },
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html"
-        })
+            template: "./index.html",
+            showErrors: true,
+        }),
     ]
 };
