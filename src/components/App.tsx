@@ -1,20 +1,30 @@
 import React, {Component} from 'react';
 import Sign from './Auth/Sign';
-import {Container} from "react-bootstrap";
-import {Header} from "./Header";
+import {Container, Row} from "react-bootstrap";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import {Profile} from "./Profile";
 import {Statistics} from "./Statistics";
+import Dynamic from "./Dynamic";
 
-class App extends Component {
+export default class App extends Component {
     render() {
         return <Router>
-            <Header/>
-            <Route path="/" exact render={() => <div style={{height: "95%"}}>
-                <Container fluid>1123123</Container>
-            </div>}/>
-            <Route path={"/profile"} component={Profile}/>
-            <Route path={"/statistics"} component={Statistics}/>
+            <Dynamic resolve={() => import("./Header")}/>
+            <Container style={{height: "95%"}} fluid>
+                <Route path="/" exact render={() => <Dynamic
+                    resolve={() =>
+                        import("./Home/Content")
+                    }
+                    inProps={{
+                        text: 'hello'
+                    }}/>
+                }/>
+                <Route path="/profile" render={() => <Container fluid>
+                    <Row>
+                        <Dynamic resolve={() => import("./Profile")}/>
+                    </Row>
+                </Container>}/>
+                <Route path={"/statistics"} component={Statistics}/>
+            </Container>
         </Router>
     }
 
@@ -24,5 +34,3 @@ class App extends Component {
         </Container>
     }
 }
-
-export default App;
