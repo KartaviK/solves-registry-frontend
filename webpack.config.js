@@ -20,7 +20,8 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, "/build"),
-        filename: "index_bundle.js"
+        filename: "bundle.js",
+        chunkFilename: './[name].bundle.js'
     },
     resolve: {
         modules: [
@@ -59,7 +60,17 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./index.html",
-            showErrors: true,
         }),
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /node_modules\/.*/,
+                    name: 'vendors',
+                    chunks: 'all',
+                },
+            },
+        },
+    },
 };
