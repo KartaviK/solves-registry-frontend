@@ -13,7 +13,8 @@
         "allowJs": false,
         "experimentalDecorators": true,
         "checkJs": false,
-        "strictNullChecks": true
+        "strictNullChecks": true,
+        "typeRoots": ["types"]
     },
     "exclude": [
         "./node_modules/**/*"
