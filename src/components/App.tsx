@@ -11,13 +11,8 @@ export default class App extends Component {
             <Dynamic resolve={() => import("./Header")}/>
             <Container style={{height: "95%"}} fluid>
                 <Route path="/" exact render={() => <Dynamic
-                    resolve={() =>
-                        import("./Home/Content")
-                    }
-                    inProps={{
-                        text: 'hello'
-                    }}/>
-                }/>
+                    resolve={() => import("./Dashboard")}
+                />}/>
                 <Route path="/profile" render={() => <Container fluid>
                     <Row>
                         <Dynamic resolve={() => import("./Profile")}/>
