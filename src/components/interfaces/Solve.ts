@@ -1,5 +1,5 @@
 export interface ISolve {
     id: number,
     time: number,
-    createdAt: string,
+    created_at: string,
 }

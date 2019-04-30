@@ -21,7 +21,7 @@ export class SolvesTable extends React.Component<{}, IState> {
     }
 
     getSolves = async () => {
-        return (await axios.get("staff/solves")).data;
+        return (await axios.get("http://solves-registry.local/v1/solves")).data;
     };
 
     public render() {
@@ -35,10 +35,10 @@ export class SolvesTable extends React.Component<{}, IState> {
             </thead>
             <tbody>
             {this.state.solves.length > 0 && (
-                this.state.solves.map((solve: ISolve) => <tr>
+                this.state.solves.map((solve: ISolve, index:number) => <tr key={index}>
                     <td>{solve.id}</td>
                     <td>{solve.time}</td>
-                    <td>{solve.createdAt}</td>
+                    <td>{solve.created_at}</td>
                 </tr>)
             )}
             </tbody>
