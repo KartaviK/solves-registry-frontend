@@ -3,22 +3,20 @@ import Sign from './Auth/Sign';
 import {Container, Row} from "react-bootstrap";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Statistics} from "./Statistics";
-import Dynamic from "./Dynamic";
+import Header from './Header';
+import Dashboard from "./Dashboard";
+import Profile from "./Profile";
+import {Stopwatch} from "./Stopwatch";
 
 export default class App extends Component {
     render() {
         return <Router>
-            <Dynamic resolve={() => import("./Header")}/>
-            <Container style={{height: "95%"}} fluid>
-                <Route path="/" exact render={() => <Dynamic
-                    resolve={() => import("./Dashboard")}
-                />}/>
-                <Route path="/profile" render={() => <Container fluid>
-                    <Row>
-                        <Dynamic resolve={() => import("./Profile")}/>
-                    </Row>
-                </Container>}/>
-                <Route path={"/statistics"} component={Statistics}/>
+            <Header/>
+            <Container fluid>
+                <Route path="/" exact component={Stopwatch}/>
+                <Route path="/home" component={Dashboard}/>
+                <Route path="/profile" component={Profile}/>
+                <Route path="/statistics" component={Statistics}/>
             </Container>
         </Router>
     }

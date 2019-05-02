@@ -14,7 +14,7 @@ export default class Dashboard extends React.Component {
                 <Router>
                     <Col md={2}>
                         <Nav defaultActiveKey="/console" className="flex-column">
-                            <Link to="/console" className={"bg-lightgrey-hover text-secondary m-1 nav-link"}>Console</Link>
+                            <Link to="console" className={"bg-lightgrey-hover text-secondary m-1 nav-link"}>Console</Link>
                             <Link to="/settings" className={"bg-lightgrey-hover text-secondary m-1 nav-link"}>Setting</Link>
                             <Link to="/statistics" className={"bg-lightgrey-hover text-secondary m-1 nav-link"}>Statistics</Link>
                             <Link to="/users" className={"bg-lightgrey-hover text-secondary m-1 nav-link"}>Users</Link>
