@@ -1,10 +1,10 @@
-html, body {
-    height: 100%;
-}
+/*html, body {*/
+/*    height: 100%;*/
+/*}*/
 
-nav {
-    height: 2.5em;
-}
+/*nav {*/
+/*    height: 2.5em;*/
+/*}*/
 
 .bg-lightgrey-hover:hover {
     background-color: lightgray;

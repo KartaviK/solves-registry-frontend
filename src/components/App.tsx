@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import Sign from './Auth/Sign';
-import {Container, Row} from "react-bootstrap";
+// import Sign from './Auth/Sign';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {Statistics} from "./Statistics";
 import Header from './Header';
@@ -12,18 +11,12 @@ export default class App extends Component {
     render() {
         return <Router>
             <Header/>
-            <Container fluid>
+            <div className="container-fluid">
                 <Route path="/" exact component={Stopwatch}/>
                 <Route path="/home" component={Dashboard}/>
                 <Route path="/profile" component={Profile}/>
                 <Route path="/statistics" component={Statistics}/>
-            </Container>
+            </div>
         </Router>
-    }
-
-    protected static sign() {
-        return <Container className="h-100 d-flex justify-content-center align-items-center">
-            <Sign/>
-        </Container>
     }
 }

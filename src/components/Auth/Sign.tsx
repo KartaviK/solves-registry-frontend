@@ -1,11 +1,10 @@
 import * as React from "react";
-import {Button, Card, Container, Form, Col} from 'react-bootstrap';
 
 class Sign extends React.Component {
     public render() {
-        return <Container>
-            <Col md={{span: 6, offset: 3}}>
-                <Card bg={"dark"} className="rounded-0">
+        return <div className="container">
+            <div className="col-md-6 offset-3">
+                {/*<div className="rounded-0">
                     <Form>
                         <Card.Header className="text-light">
                             Authentication
@@ -26,9 +25,9 @@ class Sign extends React.Component {
                             </Button>
                         </Card.Footer>
                     </Form>
-                </Card>
-            </Col>
-        </Container>;
+                </div>*/}
+            </div>
+        </div>;
     }
 }
 

@@ -1,7 +1,6 @@
 import * as React from "react";
 import axios from 'axios';
 import {VictoryChart, VictoryTheme, VictoryScatter} from 'victory';
-import {Container, Row, Col, Table} from "react-bootstrap";
 import * as PrettyMs from 'pretty-ms';
 
 export interface Solve {

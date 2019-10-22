@@ -1,7 +1,6 @@
 import * as React from "react";
 import Timer from 'react-compound-timer';
 import {INITED, PLAYING, STOPPED} from "react-compound-timer/build/lib/models/TimerState";
-import {Container} from "react-bootstrap";
 
 export class Stopwatch extends React.Component {
     public readonly state: { time: number } = {
@@ -24,9 +23,7 @@ export class Stopwatch extends React.Component {
     public render() {
         return <Timer startImmediately={false} timeToUpdate={10}>
             {({start, stop: timerStopHandler, reset, getTime, timerState}) => <React.Fragment>
-                <Container
-                    fluid
-                    className={"p-5 d-flex justify-content-center"}
+                <div className="p-5 d-flex justify-content-center container"
                     style={{
                         outline: "inherit",
                         fontSize: "12vw",
@@ -47,7 +44,7 @@ export class Stopwatch extends React.Component {
                     <Timer.Hours formatValue={number => number === 0 ? '' : `${number}:`}/>
                     <Timer.Minutes/>:<Timer.Seconds/>.
                     <Timer.Milliseconds formatValue={number => number < 100 ? `${number / 10}0` : `${number / 10}`}/>
-                </Container>
+                </div>
             </React.Fragment>}
         </Timer>;
     }
